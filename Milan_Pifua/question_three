@@ -1,0 +1,152 @@
+#(i)
+#write a python code snippet that asks the user their age and prints "You are eligible"
+#if the age is greater than or equal to 18
+#otherwise prints 'You are not eligible."
+
+# Get the user's age as input
+user_age = int(input("Enter your age: "))
+
+# checking eligibility basing on age
+if user_age >= 18:
+    print("You are eligible.")
+else:
+    print("You are not eligible.")
+
+#(ii)
+# write a python function named "grade_students" that takes a student's mark as input
+# and reyurns their corresponding grade based on the following criteria:
+# 90 or above: 'A'
+# 80-89: 'B'
+# 70-79: 'C'
+# 60-69: 'D'
+# Below 60: 'F'    
+
+def grade_students(mark):
+    if mark >= 90:
+        return 'A'
+    elif 80 <= mark < 90:
+        return 'B'
+    elif 70 <= mark < 80:
+        return 'C'
+    elif 60 <= mark < 70:
+        return 'D'
+    else:
+        return 'F'
+
+student_mark = float(input("Enter the student's mark: "))
+Answer = grade_students(student_mark)
+print(f"The corresponding grade is: {Answer}")
+
+
+#(III)
+#Test the function with a mark of 85.
+
+def grade_students(mark):
+    if mark >= 90:
+        return 'A'
+    elif 80 <= mark < 90:
+        return 'B'
+    elif 70 <= mark < 80:
+        return 'C'
+    elif 60 <= mark < 70:
+        return 'D'
+    else:
+        return 'F'
+
+
+student_mark = 85
+Answer = grade_students(student_mark)
+print(f"The corresponding grade for a mark of {student_mark} is: {Answer}")
+
+
+#(iv)
+#modify the "grade_students" function to handle the case where the input mark is not a valid number.
+# if the input is not a valid number , the function should return  'Invalid Input'
+# test the function with both a valid mark and an invalid input. 
+
+def grade_students(mark):
+    try:
+        mark = float(mark)
+    except ValueError:
+        return 'Invalid Input'
+
+    if mark >= 90:
+        return 'A'
+    elif 80 <= mark < 90:
+        return 'B'
+    elif 70 <= mark < 80:
+        return 'C'
+    elif 60 <= mark < 70:
+        return 'D'
+    else:
+        return 'F'
+
+# Test the function with a valid mark
+valid_mark =  int(input("Enter your valid mark: "))
+output_valid = grade_students(valid_mark)
+print(f"The corresponding grade for a mark of {valid_mark} is: {output_valid}")
+
+# Test the function with an invalid input
+invalid_mark = 'xyz'
+output_invalid = grade_students(invalid_mark)
+print(f"The result for an invalid input '{invalid_mark}' is: {output_invalid}")
+
+
+#(v)
+#Enhance the "grade_students" function to also provide a message along with the grade
+#'Excellent' for grades 'A' and 'B'
+#'Good' for grade 'C'
+# Satisfactory' for grade 'D'
+# Needs Improvement' for grade 'F'
+
+def grade_students(mark):
+    try:
+        mark = float(mark)
+    except ValueError:
+        return 'Invalid Input'
+
+    if mark >= 90:
+        return 'A', 'Excellent'
+    elif 80 <= mark < 90:
+        return 'B', 'Excellent'
+    elif 70 <= mark < 80:
+        return 'C', 'Good'
+    elif 60 <= mark < 70:
+        return 'D', 'Satisfactory'
+    else:
+        return 'F', 'Needs Improvement'
+
+# Test the function with a valid mark
+valid_mark = int(input("Enter your valid mark:"))
+grade, message = grade_students(valid_mark)
+print(f"The corresponding grade for a mark of {valid_mark} is: {grade} - {message}")
+
+# Test the function with an invalid input
+invalid_mark = 'xyz'
+answer_invalid = grade_students(invalid_mark)
+print(f"The result for an invalid input '{invalid_mark}' is: {answer_invalid}")
+
+
+#(VI)
+#The function should now return both the grade and the corresponding message.
+#test the function with a mark of 78.
+
+def grade_students(mark):
+    try:
+        mark = float(mark)
+    except ValueError:
+        return 'Invalid Input'
+
+    if mark >= 90:
+        return 'A', 'Excellent'
+    elif 80 <= mark < 90:
+        return 'B', 'Excellent'
+    elif 70 <= mark < 80:
+        return 'C', 'Good'
+    elif 60 <= mark < 70:
+        return 'D', 'Satisfactory'
+    else:
+        return 'F', 'Needs Improvement'
+valid_mark = 78
+grade, message = grade_students(valid_mark)
+print(f"The corresponding grade for a mark of {valid_mark} is: {grade} - {message}")
